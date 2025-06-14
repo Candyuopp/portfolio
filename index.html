@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<!-- Translator Tool Start -->
+<div style="position:fixed;top:18px;right:18px;z-index:9999;background:#FFE7BA;border-radius:8px;box-shadow:0 2px 8px rgba(108,99,255,0.07);padding:7px 14px;">
+    <select id="langSelect" style="padding:6px 12px;border-radius:5px;border:1px solid #6C63FF;background:#fff;color:#6C63FF;font-weight:bold;">
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+        <option value="es">Español</option>
+        <option value="tr">Türkçe</option>
+    </select>
+</div>
+<script>
+    // Simple translations for demo
+    const translations = {
+        ar: {
+            "Candy Hassaf": "كاندي حساف",
+            "Translator & Full-Stack Developer": "مترجمة ومطورة برمجيات شاملة",
+            "About Me": "عنّي",
+            "I’m a passionate full-stack developer and multilingual translator with experience building modern websites, applications, and games — and translating content across five languages.": "أنا مطورة برمجيات شاملة ومترجمة متعددة اللغات، لدي خبرة في بناء مواقع وتطبيقات وألعاب حديثة، وترجمة المحتوى بين خمس لغات.",
+            "I love bridging communication gaps and creating user-friendly, culturally aware digital experiences.": "أحب سد فجوات التواصل وخلق تجارب رقمية سهلة الاستخدام وواعية ثقافياً.",
+            "My journey in web development began with a fascination for how things work behind the scenes. Over time, it evolved into a deep commitment to crafting seamless, engaging user experiences.": "بدأت رحلتي في تطوير الويب بإعجاب بكيفية عمل الأشياء خلف الكواليس. مع الوقت، تطورت إلى التزام عميق بصنع تجارب مستخدم سلسة وجذابة.",
+            "I thrive on challenges and constantly seek out new technologies to stay ahead in the ever-evolving digital landscape. When I’m not coding or translating, you can find me exploring new cultures, reading about the latest tech trends, or enjoying a good game.": "أزدهر في مواجهة التحديات وأبحث باستمرار عن تقنيات جديدة لأبقى في المقدمة في عالم التكنولوجيا المتغير. عندما لا أكون أبرمج أو أترجم، تجدني أستكشف ثقافات جديدة أو أقرأ عن أحدث اتجاهات التقنية أو أستمتع بلعبة جيدة.",
+            "Skills": "المهارات",
+            "Full-Stack Developer": "مطور برمجيات شاملة",
+            "Translation": "الترجمة",
+            "English ↔ Turkish": "الإنجليزية ↔ التركية",
+            "English ↔ Arabic": "الإنجليزية ↔ العربية",
+            "English ↔ Spanish": "الإنجليزية ↔ الإسبانية",
+            "English ↔ German": "الإنجليزية ↔ الألمانية",
+            "English ↔ Kurdish": "الإنجليزية ↔ الكردية",
+            "Proofreading": "مراجعة لغوية",
+            "Projects": "المشاريع",
+            "Personal Portfolio Website": "موقع بورتفوليو شخصي",
+            "A responsive website to showcase my translation and web development work.": "موقع متجاوب لعرض أعمالي في الترجمة وتطوير الويب.",
+            "View Project": "عرض المشروع",
+            "Translation App": "تطبيق الترجمة",
+            "A web app for translating text between English, Turkish, German, Kurdish and Spanish.": "تطبيق ويب لترجمة النصوص بين الإنجليزية والتركية والألمانية والكردية والإسبانية.",
+            "Contact": "تواصل",
+            "Email:": "البريد الإلكتروني:",
+            "LinkedIn:": "لينكدإن:",
+            "GitHub:": "جيت هب:",
+            "Twitter:": "تويتر:",
+            "Instagram:": "إنستغرام:",
+            "Feel free to reach out for collaboration, translation projects, or just to say hello!": "لا تتردد في التواصل من أجل التعاون أو مشاريع الترجمة أو حتى لإلقاء التحية!",
+            "&copy; 2025 Elysion Works. All rights reserved.": "&copy; 2025 إليسيون وركس. جميع الحقوق محفوظة."
+        },
+        es: {
+            "Candy Hassaf": "Candy Hassaf",
+            "Translator & Full-Stack Developer": "Traductora y Desarrolladora Full-Stack",
+            "About Me": "Sobre mí",
+            "I’m a passionate full-stack developer and multilingual translator with experience building modern websites, applications, and games — and translating content across five languages.": "Soy una desarrolladora full-stack y traductora multilingüe apasionada, con experiencia creando sitios web, aplicaciones y juegos modernos, y traduciendo contenido en cinco idiomas.",
+            "I love bridging communication gaps and creating user-friendly, culturally aware digital experiences.": "Me encanta cerrar brechas de comunicación y crear experiencias digitales fáciles de usar y culturalmente conscientes.",
+            "My journey in web development began with a fascination for how things work behind the scenes. Over time, it evolved into a deep commitment to crafting seamless, engaging user experiences.": "Mi viaje en el desarrollo web comenzó con una fascinación por cómo funcionan las cosas detrás de escena. Con el tiempo, evolucionó hacia un compromiso profundo con crear experiencias de usuario atractivas y fluidas.",
+            "I thrive on challenges and constantly seek out new technologies to stay ahead in the ever-evolving digital landscape. When I’m not coding or translating, you can find me exploring new cultures, reading about the latest tech trends, or enjoying a good game.": "Me motivan los desafíos y siempre busco nuevas tecnologías para mantenerme a la vanguardia en el cambiante mundo digital. Cuando no estoy programando o traduciendo, me encontrarás explorando nuevas culturas, leyendo sobre las últimas tendencias tecnológicas o disfrutando de un buen juego.",
+            "Skills": "Habilidades",
+            "Full-Stack Developer": "Desarrolladora Full-Stack",
+            "Translation": "Traducción",
+            "English ↔ Turkish": "Inglés ↔ Turco",
+            "English ↔ Arabic": "Inglés ↔ Árabe",
+            "English ↔ Spanish": "Inglés ↔ Español",
+            "English ↔ German": "Inglés ↔ Alemán",
+            "English ↔ Kurdish": "Inglés ↔ Kurdo",
+            "Proofreading": "Corrección de textos",
+            "Projects": "Proyectos",
+            "Personal Portfolio Website": "Sitio web de portafolio personal",
+            "A responsive website to showcase my translation and web development work.": "Un sitio web adaptable para mostrar mi trabajo de traducción y desarrollo web.",
+            "View Project": "Ver proyecto",
+            "Translation App": "Aplicación de traducción",
+            "A web app for translating text between English, Turkish, German, Kurdish and Spanish.": "Una aplicación web para traducir textos entre inglés, turco, alemán, kurdo y español.",
+            "Contact": "Contacto",
+            "Email:": "Correo electrónico:",
+            "LinkedIn:": "LinkedIn:",
+            "GitHub:": "GitHub:",
+            "Twitter:": "Twitter:",
+            "Instagram:": "Instagram:",
+            "Feel free to reach out for collaboration, translation projects, or just to say hello!": "¡No dudes en contactarme para colaborar, proyectos de traducción o simplemente para saludar!",
+            "&copy; 2025 Elysion Works. All rights reserved.": "&copy; 2025 Elysion Works. Todos los derechos reservados."
+        },
+        tr: {
+            "Candy Hassaf": "Candy Hassaf",
+            "Translator & Full-Stack Developer": "Çevirmen & Full-Stack Geliştirici",
+            "About Me": "Hakkımda",
+            "I’m a passionate full-stack developer and multilingual translator with experience building modern websites, applications, and games — and translating content across five languages.": "Modern web siteleri, uygulamalar ve oyunlar geliştiren, beş dilde içerik çevirisi yapan tutkulu bir full-stack geliştirici ve çok dilli çevirmenim.",
+            "I love bridging communication gaps and creating user-friendly, culturally aware digital experiences.": "İletişim engellerini aşmayı ve kullanıcı dostu, kültürel olarak duyarlı dijital deneyimler oluşturmayı seviyorum.",
+            "My journey in web development began with a fascination for how things work behind the scenes. Over time, it evolved into a deep commitment to crafting seamless, engaging user experiences.": "Web geliştirme yolculuğum, perde arkasında işlerin nasıl yürüdüğüne olan merakımla başladı. Zamanla, kusursuz ve etkileyici kullanıcı deneyimleri oluşturma konusunda derin bir bağlılığa dönüştü.",
+            "I thrive on challenges and constantly seek out new technologies to stay ahead in the ever-evolving digital landscape. When I’m not coding or translating, you can find me exploring new cultures, reading about the latest tech trends, or enjoying a good game.": "Zorluklarla başa çıkmayı severim ve sürekli yeni teknolojiler arayarak dijital dünyadaki gelişmeleri takip ederim. Kod yazmadığım veya çeviri yapmadığım zamanlarda yeni kültürler keşfeder, en son teknoloji trendlerini okur veya güzel bir oyun oynarım.",
+            "Skills": "Yetenekler",
+            "Full-Stack Developer": "Full-Stack Geliştirici",
+            "Translation": "Çeviri",
+            "English ↔ Turkish": "İngilizce ↔ Türkçe",
+            "English ↔ Arabic": "İngilizce ↔ Arapça",
+            "English ↔ Spanish": "İngilizce ↔ İspanyolca",
+            "English ↔ German": "İngilizce ↔ Almanca",
+            "English ↔ Kurdish": "İngilizce ↔ Kürtçe",
+            "Proofreading": "Düzeltme",
+            "Projects": "Projeler",
+            "Personal Portfolio Website": "Kişisel Portföy Sitesi",
+            "A responsive website to showcase my translation and web development work.": "Çeviri ve web geliştirme çalışmalarımı sergilemek için duyarlı bir web sitesi.",
+            "View Project": "Projeyi Görüntüle",
+            "Translation App": "Çeviri Uygulaması",
+            "A web app for translating text between English, Turkish, German, Kurdish and Spanish.": "İngilizce, Türkçe, Almanca, Kürtçe ve İspanyolca arasında metin çevirisi yapan bir web uygulaması.",
+            "Contact": "İletişim",
+            "Email:": "E-posta:",
+            "LinkedIn:": "LinkedIn:",
+            "GitHub:": "GitHub:",
+            "Twitter:": "Twitter:",
+            "Instagram:": "Instagram:",
+            "Feel free to reach out for collaboration, translation projects, or just to say hello!": "İş birliği, çeviri projeleri veya sadece merhaba demek için bana ulaşmaktan çekinmeyin!",
+            "&copy; 2025 Elysion Works. All rights reserved.": "&copy; 2025 Elysion Works. Tüm hakları saklıdır."
+        }
+    };
+
+    function translatePage(lang) {
+        if (lang === "en") {
+            location.reload();
+            return;
+        }
+        // Translate headings and static text
+        document.querySelectorAll("h1,h2,h3,h4,p,a,footer,li").forEach(el => {
+            const orig = el.getAttribute("data-orig") || el.innerHTML;
+            el.setAttribute("data-orig", orig);
+            if (translations[lang][orig]) {
+                el.innerHTML = translations[lang][orig];
+            }
+        });
+        // Change dir for Arabic
+        if (lang === "ar") {
+            document.body.setAttribute("dir", "rtl");
+            document.body.style.fontFamily = "'Cairo', Arial, sans-serif";
+        } else {
+            document.body.setAttribute("dir", "ltr");
+            document.body.style.fontFamily = "";
+        }
+    }
+
+    document.getElementById("langSelect").addEventListener("change", function() {
+        translatePage(this.value);
+    });
+</script>
+<!-- Translator Tool End -->
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        link[rel="icon"] {
+            border-radius: 50%;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    </style>
+</section>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candy Hassaf Portfolio</title>
+    <style>
+        :root {
+            --black: #181818;
+            --main-bg: #F5F5F5;
+            --main: #6C63FF;
+            --highlight: #FFE7BA;
+            --text: #1E1E1E;
+        }
+        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Inter:wght@400&display=swap');
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            background: var(--main-bg);
+            color: var(--text);
+        }
+        header h1 {
+            font-family: 'Lora', serif;
+            font-weight: 700;
+            opacity: 0;
+            transform: translateY(-30px);
+            animation: slideDown 1s 0.2s forwards;
+        }
+        @keyframes slideDown {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        header {
+            background: var(--main);
+            color: var(--highlight);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        nav {
+            background: var(--highlight);
+            padding: 1rem 0;
+            text-align: center;
+        }
+        nav a {
+            color: var(--main);
+            margin: 0 1.5rem;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s, transform 0.2s;
+            position: relative;
+        }
+        nav a:hover {
+            color: var(--text);
+            transform: translateY(-2px) scale(1.05);
+        }
+        section {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: #fff;
+            color: var(--text);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(108,99,255,0.07);
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1);
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        h2 {
+            color: var(--main);
+        }
+        .skills, .projects, .languages {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .skill, .project, .language {
+            flex: 1 1 250px;
+            background: #fff;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(255,231,186,0.10);
+            border-left: 5px solid var(--highlight);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .skill:hover, .project:hover, .language:hover {
+            box-shadow: 0 4px 16px rgba(108,99,255,0.13);
+            transform: translateY(-6px) scale(1.03);
+        }
+        .project h4 {
+            color: var(--main);
+        }
+        a {
+            color: var(--main);
+            transition: color 0.2s;
+        }
+        a:hover {
+            color: var(--highlight);
+        }
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            background: var(--main);
+            color: var(--highlight);
+            margin-top: 2rem;
+        }
+        @media (max-width: 700px) {
+            .skills, .projects, .languages {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Candy Hassaf</h1>
+        <p>Translator & Full-Stack Developer</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+           I’m a passionate full-stack developer and multilingual translator with experience building modern websites, applications, and games — and translating content across five languages.
+
+<p>I love bridging communication gaps and creating user-friendly, culturally aware digital experiences.</p>
+
+<p>My journey in web development began with a fascination for how things work behind the scenes. Over time, it evolved into a deep commitment to crafting seamless, engaging user experiences.</p>
+
+<p>I thrive on challenges and constantly seek out new technologies to stay ahead in the ever-evolving digital landscape.
+When I’m not coding or translating, you can find me exploring new cultures, reading about the latest tech trends, or enjoying a good game.</p>
+        </p>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skills">
+            <div class="skill">
+                <h3>Full-Stack Developer</h3>
+                <ul>
+                    <li>HTML, CSS, JavaScript</li>
+                    <li>C#, Python</li>
+                    <li>Node.js, Express</li>
+                    <li>Unreal Engine, C++</li>
+                </ul>
+            </div>
+            <div class="skill">
+                <h3>Translation</h3>
+                <ul>
+                    <li>English &harr; Turkish</li>
+                    <li>English &harr; Arabic</li>
+                    <li>English &harr; Spanish</li>
+                    <li>English &harr; German</li>
+                    <li>English &harr; Kurdish</li>
+                    <li>Proofreading</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <div class="project">
+                <h4>Personal Portfolio Website</h4>
+                <p>A responsive website to showcase my translation and web development work.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+            <div class="project">
+                <h4>Translation App</h4>
+                <p>A web app for translating text between English, Turkish, German, Kurdish and Spanish.</p>
+                <a href="#" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:hassafcandy@gmail.com">hassafcandy@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/candy-hassaf-07770a354?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAFhh19sB_8G8DjTNCsUg4ORzEHjv2E-lqBQ&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3B0%2FuLOyZ0Rtux3ZOPenvpfA%3D%3D" target="_blank">Candy Hassaf</a></p>
+        <p>GitHub: <a href="https://github.com/Candyuopp" target="_blank">github.com/Candyuopp</a></p>
+        <p>Twitter: <a href="https://twitter.com/CandyHassaf" target="_blank">@CandyHassaf</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/candyuopp/" target="_blank">@candyuopp</a></p>
+        <p>Feel free to reach out for collaboration, translation projects, or just to say hello!</p>
+    </section>
+    <footer>
+        &copy; 2025 Elysion Works. All rights reserved.
+    </footer>
+    <script>
+        // Fade-in animation for sections on scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('section');
+            const observer = new window.IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
+</body>
+</html>
